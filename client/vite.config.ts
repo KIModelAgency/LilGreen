@@ -2,10 +2,10 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  root: "client",              // <— wichtig: dein Client liegt in /client
+  root: "client",
   plugins: [react()],
   build: {
-    outDir: "dist",            // <— Output im Repo-Root (Vercel Output Directory)
+    outDir: "dist",
     emptyOutDir: true
   },
   server: {
