@@ -1,0 +1,71 @@
+You are a senior React+UX engineer. Build a modern, fast restaurant website for “Lil Green Kitchen”.
+
+Tech & quality bar
+- Stack: Vite + React + TypeScript + Tailwind CSS. No CSS frameworks beyond Tailwind; use shadcn/ui patterns (headless) where useful.
+- Performance: Lighthouse ≥ 95 on Performance/SEO/Best Practices/Accessibility. Lazy-load images, preconnect fonts, responsive images (srcset), no blocking scripts.
+- A11y: semantic HTML, proper landmarks, alt text, focus states, aria labels, reduced-motion safe.
+- SEO: <title>, meta description, Open Graph, Twitter cards, JSON-LD for Organization + Restaurant + OpeningHours + MenuItem.
+- i18n: DE default, EN optional (simple toggle with JSON dictionaries).
+
+Brand & content (from current site)
+- Positioning: “Plant based kitchen, inspired by nature. ALOHA. #MAKEYOUHEALTHY”.
+- USPs: fresh bowls, salads & smoothies; seasonal, regional, delicious.
+- Locations:
+  1) Starnberg — Wittelsbacherstraße 6, 82319. Hours: Mon–Fri 08:30–18:30, Sat 10:00–16:00.
+  2) Berg — Aufkirchnerstraße 1, 82335. Hours: Mon–Fri 10:30–18:30.
+- Social: Instagram @lil_green_kitchen.
+- Legal: Brain Food Innovations GmbH, info@lilgreen.de (Impressum/Datenschutz pages).
+
+Information architecture
+- Home: hero with claim, seasonal teaser, CTA buttons (“Speisekarte ansehen”, “Standorte”, “Auf Instagram ansehen”).
+- Menu: static menu cards (Bowls, Salads, Smoothies, Bakery, Coffee); daily/weekly specials section; tags (vegan, glutenfrei, no refined sugar).
+- Locations: map, addresses, business hours, parking/public transport hints, click-to-call, click-to-navigate.
+- Story: mission (plant-based, seasonal, regional, without refined sugar), sustainability, sourcing.
+- Catering & Events: inquiry form (name, email, phone, event date, pax, notes).
+- Contact: contact form + FAQ (allergens, take-away, payments).
+- Legal: Impressum, Datenschutz (DE).
+
+Design system
+- Look & feel: clean, bright, nature-inspired. Generous white space, rounded-2xl cards, soft shadows, subtle micro-interactions.
+- Color tokens:
+  --lgk-green: #2E7D5B (primary); --lgk-leaf: #7FBF8E (accents);
+  --lgk-cream: #FAF8F3 (background); --lgk-ink: #0E1B14 (text).
+- Typography: Inter (UI), Playfair Display (headlines) or similar system-safe fallback. Big, confident H1; readable body text.
+- Imagery: bowls, salads, smoothies; use tasteful placeholders and <picture> with aspect-ratio utilities.
+
+Core components (Tailwind + TSX)
+- <Navbar/> sticky, transparent→solid on scroll; links: Home, Menü, Standorte, Story, Catering, Kontakt; Instagram icon.
+- <Hero/> with headline, subcopy, CTAs. Add subtle parallax/tilt on food images.
+- <MenuSection/>: category tabs, filter chips (vegan, glutenfrei), price badges, calorie/ingredient tooltips.
+- <LocationCard/> with hours list + “Jetzt navigieren” and “Anrufen” buttons; <MapEmbed/> (Leaflet or simple Google Maps link).
+- <TestimonialCarousel/> (3–5 quotes).
+- <CateringForm/> with validation + success state.
+- <Footer/> with address blocks (both locations), opening hours, email, Instagram, legal links.
+- <LangToggle/> (DE/EN).
+
+Data model (sample JSON in /src/data)
+- menu.json with categories/items: { id, name, desc, price, labels: ["vegan","glutenfrei","no-refined-sugar"] }.
+- locations.json with { city, address, zip, hours:[{day, open, close}], phone, gmapsUrl }.
+
+Pages & routing
+- / (Home), /menu, /locations, /story, /catering, /contact, /impressum, /datenschutz.
+- Scroll restoration, smooth anchor links.
+
+Animations (Framer Motion)
+- Fade/slide on section reveal, reduced-motion guarded.
+- Hover lift on cards, spring transitions for filter chips.
+
+Structured data (JSON-LD examples)
+- Organization + 2x Restaurant with OpeningHoursSpecification per location.
+- Menu with a few MenuItem examples (Bowls/Salads/Smoothies).
+
+Implementation notes
+- Put content (hours/addresses/claim) in config so staff can edit without code.
+- Use env vars for analytics (G-XXXX) and map keys; degrade gracefully without keys.
+- Add robots.txt + sitemap.xml generation.
+
+Deliverables
+- Complete React app with the above routes/components.
+- Tailwind config with color tokens and container defaults.
+- Example assets and menu data.
+- README with setup, build, deploy steps (Vercel).
