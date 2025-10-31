@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/accordion';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { insertContactMessageSchema, type InsertContactMessage } from '@shared/schema';
+import { insertContactMessageSchema, type InsertContactMessage } from '@/shared/schema';
 import { CheckCircle2 } from 'lucide-react';
 import { apiRequest } from '@/lib/queryClient';
 

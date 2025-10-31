@@ -1,14 +1,15 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { fileURLToPath, URL } from "node:url";
 
 export default defineConfig({
-  root: "client",
   plugins: [react()],
-  build: {
-    outDir: "dist",
-    emptyOutDir: true
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@assets": fileURLToPath(new URL("../attached_assets", import.meta.url)),
+        }
   },
-  server: {
-    port: 5173
-  }
+  server: { fs: { allow: [".."] } },
+  build: { outDir: "dist", emptyOutDir: true }
 });

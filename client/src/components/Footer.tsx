@@ -2,7 +2,7 @@ import { Link } from 'wouter';
 import { Instagram, MapPin, Phone, Mail } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import locationsData from '@/data/locations.json';
-import type { Location } from '@shared/schema';
+import type { Location } from '@/shared/schema';
 
 const locations = locationsData as Location[];
 

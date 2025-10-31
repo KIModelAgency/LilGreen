@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from '@/contexts/LanguageContext';
 import menuData from '@/data/menu.json';
-import type { MenuItem } from '@shared/schema';
+import type { MenuItem } from '@/shared/schema';
 import smoothieImage from '@assets/generated_images/Fresh_green_smoothie_product_shot_8d9f0291.png';
 import saladImage from '@assets/generated_images/Fresh_garden_salad_bowl_79601ace.png';
 import bakeryImage from '@assets/generated_images/Healthy_artisan_bakery_selection_917dc92d.png';

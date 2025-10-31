@@ -9,7 +9,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { insertCateringInquirySchema, type InsertCateringInquiry } from '@shared/schema';
+import { insertCateringInquirySchema, type InsertCateringInquiry } from '@/shared/schema';
 import { CheckCircle2, Utensils } from 'lucide-react';
 import { apiRequest } from '@/lib/queryClient';
 
